@@ -5,9 +5,11 @@ export class AuthService {
   account;
 
   constructor() {
-    this.client
-      .setEndpoint("https://cloud.appwrite.io/v1") // Your Appwrite endpoint
-      .setProject("66df06290023261cd8be");
+    const endpoint = String(import.meta.env.VITE_APP_APPWRITE_URL);
+    const projectId = String(import.meta.env.VITE_APP_APPWRITE_PROJECT_ID);
+
+    this.client.setEndpoint(endpoint).setProject(projectId);
+
     this.account = new Account(this.client);
   }
 
