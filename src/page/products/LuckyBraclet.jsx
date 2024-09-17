@@ -3,8 +3,7 @@ import Layout from "../Layout";
 import UseMediaQuary from "@/hooks/UseMediaQuary";
 import { SlArrowDown } from "react-icons/sl";
 import ProductCard from "../../components/products/ProductCard";
-import { Box } from "@material-ui/core";
-import { Slider } from "@mui/material";
+import { Box, Slider } from "@mui/material";
 
 function LuckyBraclet() {
   const isAboveScreen = UseMediaQuary("(min-width:1060px)");
