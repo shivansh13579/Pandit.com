@@ -1,0 +1,12 @@
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background-color: black;
+  background-size: 15px; /* Optionally remove the default arrow icon */
+  border-radius: 50%;
+  width: 40px; /* Optional: adjust width */
+  height: 40px; /* Optional: adjust height */
+}
+.carousel-control-next-icon:hover,
+.carousel-control-prev-icon:hover {
+  background-color: hsl(59, 74%, 62%); /* Changes background color on hover */
+}

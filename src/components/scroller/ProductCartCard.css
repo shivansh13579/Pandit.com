@@ -1,0 +1,22 @@
+/* Custom styles for Slick Carousel arrows */
+.slick-prev {
+  z-index: 1; /* Ensure arrows are on top */
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  background-color: black;
+  display: block !important;
+}
+.slick-next {
+  z-index: 1; /* Ensure arrows are on top */
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  display: block !important; /* Force display if hidden by other styles */
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-size: 20px;
+  color: black;
+}
