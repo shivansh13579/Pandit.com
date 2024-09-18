@@ -47,7 +47,7 @@ function ContactUs() {
               <li>
                 <Link
                   className="hover:text-red-600  hover:no-underline"
-                  //   onClick={navigate("/")}
+                  to={"/"}
                 >
                   Home
                 </Link>

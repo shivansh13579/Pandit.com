@@ -61,7 +61,7 @@ function Services() {
             viewport={{ once: true, amount: 0 }}
             initial="hidden"
             whileInView="visible"
-            className="w-5/6 mx-auto py-6  flex items-center justify-center "
+            className="w-5/6 mx-auto pt-6  flex items-center justify-center "
           >
             <h1 className="uppercase  text-black font-semibold underline text-center text-xl sm:text-4xl my-4">
               <span className="text-[#fa0808] ">Our Puja</span> Services
@@ -81,11 +81,11 @@ function Services() {
             viewport={{ once: true, amount: 0 }}
             initial="hidden"
             whileInView="visible"
-            className="w-5/6  mx-auto grid sm:grid-cols-3 sm:items-center sm:justify-items-center  md:grid-cols-3 md:items-center md:justify-items-center md:gap-4 sm:gap-2 lg:grid-cols-4 gap-4 pb-9"
+            className=" w-5/6 mx-auto flex flex-wrap justify-center gap-4 pb-9 pt-4"
           >
             {serviceData.map((data) => {
               return (
-                <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 overflow-hidden">
+                <div class="w-full sm:w-1/3 md:w-1/3 lg:w-1/4 h-full flex flex-col  items-center justify-center gap-3 overflow-hidden rounded-lg bg-white border border-gray-200 rounded-lg shadow   overflow-hidden">
                   <motion.div
                     whileHover={{ scale: 1.1, transition: { duration: 0.2 } }}
                     whileTap={{ scale: 0.9 }}
