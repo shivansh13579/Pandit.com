@@ -194,11 +194,13 @@ function MobileMenu() {
         <div className="bg-white">
           <div className="w-5/6 mx-auto flex items-center justify-between py-4 ">
             <div className="flex-1 order-2 w-full h-full">
-              <img
-                className="w-[200px] h-[40px] w-full"
-                src="https://www.pandit.com/cdn/shop/files/panditcomlogo_8fdb6d70-7baa-4df1-ad59-d123869184e9.png?v=1714642504"
-                alt=""
-              />
+              <Link to={"/"}>
+                <img
+                  className=" h-[40px] w-full"
+                  src="https://www.pandit.com/cdn/shop/files/panditcomlogo_8fdb6d70-7baa-4df1-ad59-d123869184e9.png?v=1714642504"
+                  alt=""
+                />
+              </Link>
             </div>
             <div className="flex-1 order-1 ">
               <SlMenu
@@ -207,14 +209,29 @@ function MobileMenu() {
               />
             </div>
             <div className="flex-1 flex items-center gap-6 justify-end  order-3">
-              <div className="relative">
-                <Link to={"/productCart"}>
-                  <BsCart3 className="text-3xl" />
-                </Link>
-                <span className="absolute -right-3 bottom-4 text-[12px] px-[5px] bg-yellow-500 rounded-full ">
-                  {cart.length}
-                </span>
-              </div>
+              {!isAuthenticate ? (
+                <>
+                  <div className="relative">
+                    <Link to={"/signup"}>
+                      <BsCart3 className="text-3xl" />
+                    </Link>
+                    {/* <span className="absolute -right-3 bottom-4 text-[12px] px-[5px] bg-yellow-500 rounded-full ">
+                      {cart.length}
+                    </span> */}
+                  </div>
+                </>
+              ) : (
+                <>
+                  <div className="relative">
+                    <Link to={"/productCart"}>
+                      <BsCart3 className="text-3xl" />
+                    </Link>
+                    <span className="absolute -right-3 bottom-4 text-[12px] px-[5px] bg-yellow-500 rounded-full ">
+                      {cart.length}
+                    </span>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>
@@ -241,9 +258,9 @@ function MobileMenu() {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="bg-white w-full left-0 left-0 top-0 z-20 h-screen fixed flex flex-col"
+            className="bg-white w-full left-0 left-0 top-0 z-20 h-screen fixed flex flex-col overflow-scroll"
           >
-            <div className="flex justify-between items-center py-4 px-3 border gap-3">
+            <div className="flex justify-between items-center py-4 px-5 border gap-3">
               <div className="flex-1 w-full">
                 <img
                   className="w-[200px] h-[40px]"
@@ -260,7 +277,7 @@ function MobileMenu() {
                 />
               </div>
             </div>
-            <div className="flex flex-col items-start px-3 justify-start text-xl gap-5 mt-4 py-4">
+            <div className="flex flex-col items-start px-5 justify-start text-xl gap-5 mt-4 py-2">
               <ul className="font-semibold w-full px-3">
                 <li className="pt-7 border-b flex items-center">
                   <NavLink
@@ -357,16 +374,16 @@ function MobileMenu() {
                 </li>
               </ul>
             </div>
-            <div className=" flex items-center px-5 gap-4 justify-start py-5 mt-5 ">
+            <div className=" flex items-center px-5 gap-4 justify-start py-5 mt-3">
               {!isAuthenticate ? (
                 <>
-                  <div className="bg-blue-700 text-white flex gap-2 border border-violet-500 hover:bg-violet-300 px-3 py-1 rounded-md font-semibold ">
-                    <Link to={"/login"} className="flex gap-2">
+                  <div className="bg-lime-200 hover:bg-lime-300 text-black flex gap-2 border border-violet-500  px-3 py-1 rounded-md font-semibold ">
+                    <Link to={"/login"} className="flex gap-6">
                       <p>LogIn</p>
                     </Link>
                   </div>
-                  <div className="bg-blue-700 text-white flex gap-2 border border-violet-500 hover:bg-violet-300 px-3 py-1 rounded-md font-semibold ">
-                    <Link to={"/signup"} className="flex gap-2">
+                  <div className="bg-lime-200 hover:bg-lime-300 text-black flex gap-2 border border-violet-500 px-3 py-1 rounded-md font-semibold ">
+                    <Link to={"/signup"} className="flex gap-4">
                       <p>SignUp</p>
                     </Link>
                   </div>
@@ -375,7 +392,7 @@ function MobileMenu() {
                 <>
                   <div
                     onClick={handleLogOut}
-                    className="bg-blue-700 flex gap-2 border border-violet-500 hover:bg-violet-300 px-3 py-1 rounded-md font-semibold text-white"
+                    className="bg-lime-200 hover:bg-lime-300 text-black flex gap-2 border border-violet-500 hover:bg-violet-300 px-3 py-1 rounded-md font-semibold text-white"
                   >
                     <p>LogOut</p>
                   </div>

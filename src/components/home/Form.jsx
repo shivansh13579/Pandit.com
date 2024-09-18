@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { toast } from "react-toastify";
 
 function Form() {
   const [formData, setFormData] = useState({
@@ -27,7 +28,7 @@ function Form() {
       });
 
       if (response.ok) {
-        console.log("Form Submitted Successfully");
+        toast.success("Form Submitted Successfully");
         setFormData({
           name: "",
           email: "",
@@ -36,10 +37,10 @@ function Form() {
           message: "",
         });
       } else {
-        console.error("Erorr Submitting the Form.Please try again");
+        toast.error("Erorr Submitting the Form.Please try again");
       }
     } catch (error) {
-      console.error("Error:", error);
+      toast.error(error);
     }
   };
 

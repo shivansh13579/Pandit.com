@@ -23,11 +23,11 @@ function ProductCartCard() {
       items: 4,
     },
     tablet: {
-      breakpoint: { max: 768, min: 425 },
+      breakpoint: { max: 768, min: 630 },
       items: 3,
     },
     mobile: {
-      breakpoint: { max: 425, min: 0 },
+      breakpoint: { max: 630, min: 0 },
       items: 1,
     },
   };
@@ -48,7 +48,7 @@ function ProductCartCard() {
       removeArrowOnDeviceType={["tablet", "mobile", "desktop", "largeDesktop"]}
     >
       {cards.map((card) => (
-        <div className="w-full flex items-center justify-center gap-3">
+        <div className="w-full h-[450px] sm:h-[400px] items-center flex md:items-start justify-center gap-3">
           <div key={card.id} className="w-full h-fit sm:w-[200px] sm:h-[280px]">
             <motion.div
               whileHover={{ scale: 1.1, transition: { duration: 0.4 } }}
@@ -58,7 +58,7 @@ function ProductCartCard() {
             >
               <Link to={`/product/${card.slug}`}>
                 <img
-                  className="w-full h-[180px] rounded-xl"
+                  className="w-full h-fit rounded-xl"
                   src={isHovered[card.id] ? card.images.src2 : card.images.src1}
                   alt=""
                 />

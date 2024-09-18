@@ -9,7 +9,7 @@ function Number({ n }) {
   const { number } = useSpring({
     from: { number: 0 },
     number: n,
-    delay: 1500,
+    delay: 5000,
     config: { mass: 1, tension: 20, friction: 10 },
   });
   return <animated.div>{number.to((n) => n.toFixed(0))}</animated.div>;
@@ -18,7 +18,7 @@ function Number({ n }) {
 function OurAchivements() {
   const isAboveScreen = UseMediaQuary("(min-width:1060px)");
   return isAboveScreen ? (
-    <div className="w-5/6 mx-auto flex flex-col gap-4 py-4">
+    <div className="w-5/6 mx-auto flex flex-col gap-4 py-4 border">
       <div className="flex w-full py-6">
         <AnimatePresence>
           <motion.div
@@ -27,7 +27,7 @@ function OurAchivements() {
               visible: {
                 opacity: 1,
                 x: 0,
-                transition: { delay: 0.2, duration: 1, ease: "linear" },
+                transition: { delay: 0.4, duration: 1, ease: "linear" },
               },
             }}
             initial="hidden"
@@ -37,7 +37,7 @@ function OurAchivements() {
             className="flex-1 pr-3"
           >
             <h1 className="text-[32px] font-roboto font-semibold pb-4 tracking-tighter uppercase">
-              s<span className="text-[#fa0808]">Pandit Booking</span> - Book
+              <span className="text-[#fa0808]">Pandit Booking</span> - Book
               Panditji For Puja
             </h1>
             <p className="text-[18px] font-roboto leading-relaxed">
@@ -231,71 +231,170 @@ function OurAchivements() {
             </button>
           </Link>
         </div>
-        <div className="flex-1">
+        <div
+          variants={{
+            hidden: { opacity: 0, y: -50 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              transition: { delay: 0.2, duration: 1, ease: "linear" },
+            },
+          }}
+          viewport={{ once: true, amount: 0 }}
+          initial="hidden"
+          whileInView="visible"
+          className="flex-1"
+        >
           <img
             src="https://www.panditjeeonline.in/wp-content/uploads/2022/12/h-about-us.png.webp"
             alt=""
           />
         </div>
       </div>
-      <div className="flex items-center justify-center py-1">
+      <div
+        variants={{
+          hidden: { opacity: 0, y: -50 },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: { delay: 0.2, duration: 1, ease: "linear" },
+          },
+        }}
+        viewport={{ once: true, amount: 0 }}
+        initial="hidden"
+        whileInView="visible"
+        className="flex items-center justify-center py-1"
+      >
         <h1 className="text-3xl font-roboto font-semibold pb-4 leading-7">
           <span className="text-[#fa0808]">Our</span> Achivements
         </h1>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full h-full sm:w-full sm:h-full">
-        <div className="relative w-full h-full">
-          <img className="w-full h-full" src="../win.svg" alt="" />
-          <div className="absolute top-0 right-0 left-0 w-full h-full flex flex-col items-center justify-center gap-2">
-            <img className="w-[70px] h-[80px]" src="../temple.svg" alt="" />
+      <div
+        variants={{
+          hidden: { opacity: 0, y: -50 },
+          visible: {
+            opacity: 1,
+            y: 0,
+            transition: { delay: 0.2, duration: 1, ease: "linear" },
+          },
+        }}
+        viewport={{ once: true, amount: 0 }}
+        initial="hidden"
+        whileInView="visible"
+        className="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full h-full sm:w-full sm:h-full"
+      >
+        <AnimatePresence>
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: -50 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { delay: 0.2, duration: 1, ease: "linear" },
+              },
+            }}
+            viewport={{ once: true, amount: 0 }}
+            initial="hidden"
+            whileInView="visible"
+            className="relative w-full h-full"
+          >
+            <img className="w-full h-full" src="../win.svg" alt="" />
+            <div className="absolute top-0 right-0 left-0 w-full h-full flex flex-col items-center justify-center gap-2">
+              <img className="w-[70px] h-[80px]" src="../temple.svg" alt="" />
 
-            <p className="w-full text-4xl flex justify-center font-bold">
-              <Number n={1700} />
-              <span>+</span>
-            </p>
+              <p className="w-full text-4xl flex justify-center font-bold">
+                <Number n={1700} />
+                <span>+</span>
+              </p>
 
-            <p className="text-xl">Puja Performed</p>
-          </div>
-        </div>
-        <div className="relative w-full h-full">
-          <img className="w-full h-full" src="../win.svg" alt="" />
-          <div className="absolute top-0 right-0 left-0 w-full h-full flex flex-col items-center justify-center gap-2">
-            <img className="w-[70px] h-[80px]" src="../child.svg" alt="" />
+              <p className="text-xl">Puja Performed</p>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+        <AnimatePresence>
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: -50 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { delay: 0.2, duration: 1, ease: "linear" },
+              },
+            }}
+            viewport={{ once: true, amount: 0 }}
+            initial="hidden"
+            whileInView="visible"
+            className="relative w-full h-full"
+          >
+            <img className="w-full h-full" src="../win.svg" alt="" />
+            <div className="absolute top-0 right-0 left-0 w-full h-full flex flex-col items-center justify-center gap-2">
+              <img className="w-[70px] h-[80px]" src="../child.svg" alt="" />
 
-            <p className="w-full text-4xl flex justify-center font-bold">
-              <Number n={2000} />
-              <span>+</span>
-            </p>
+              <p className="w-full text-4xl flex justify-center font-bold">
+                <Number n={2000} />
+                <span>+</span>
+              </p>
 
-            <p className="text-xl">Pandit ji Listed</p>
-          </div>
-        </div>
-        <div className="relative w-full h-full">
-          <img className="w-full h-full" src="../win.svg" alt="" />
-          <div className="absolute top-0 right-0 left-0 w-full h-full flex flex-col items-center justify-center gap-2">
-            <img className="w-[70px] h-[80px]" src="../set.svg" alt="" />
+              <p className="text-xl">Pandit ji Listed</p>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+        <AnimatePresence>
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: -50 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { delay: 0.2, duration: 1, ease: "linear" },
+              },
+            }}
+            viewport={{ once: true, amount: 0 }}
+            initial="hidden"
+            whileInView="visible"
+            className="relative w-full h-full"
+          >
+            <img className="w-full h-full" src="../win.svg" alt="" />
+            <div className="absolute top-0 right-0 left-0 w-full h-full flex flex-col items-center justify-center gap-2">
+              <img className="w-[70px] h-[80px]" src="../set.svg" alt="" />
 
-            <p className="w-full text-4xl flex justify-center font-bold">
-              <Number n={100} />
-              <span>+</span>
-            </p>
+              <p className="w-full text-4xl flex justify-center font-bold">
+                <Number n={100} />
+                <span>+</span>
+              </p>
 
-            <p className="text-xl">Type of Puja</p>
-          </div>
-        </div>
-        <div className="relative w-full h-full">
-          <img className="w-full h-full" src="../win.svg" alt="" />
-          <div className="absolute top-0 right-0 left-0 w-full h-full flex flex-col items-center justify-center gap-2">
-            <img className="w-[70px] h-[80px]" src="../center.svg" alt="" />
+              <p className="text-xl">Type of Puja</p>
+            </div>
+          </motion.div>
+        </AnimatePresence>
+        <AnimatePresence>
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: -50 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                transition: { delay: 0.2, duration: 1, ease: "linear" },
+              },
+            }}
+            viewport={{ once: true, amount: 0 }}
+            initial="hidden"
+            whileInView="visible"
+            className="relative w-full h-full"
+          >
+            <img className="w-full h-full" src="../win.svg" alt="" />
+            <div className="absolute top-0 right-0 left-0 w-full h-full flex flex-col items-center justify-center gap-2">
+              <img className="w-[70px] h-[80px]" src="../center.svg" alt="" />
 
-            <p className="w-full text-4xl flex justify-center font-bold">
-              <Number n={95} />
-              <span>+</span>
-            </p>
+              <p className="w-full text-4xl flex justify-center font-bold">
+                <Number n={95} />
+                <span>+</span>
+              </p>
 
-            <p className="text-xl">Puja Performed</p>
-          </div>
-        </div>
+              <p className="text-xl">Puja Performed</p>
+            </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
     </div>
   );

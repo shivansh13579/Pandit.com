@@ -18,9 +18,9 @@ function ProductCard() {
           viewport={{ once: true, amount: 0 }}
           initial="hidden"
           whileInView="visible"
-          className="my-4 flex items-center justify-center"
+          className="my-4 sm:my-2 flex items-center justify-center"
         >
-          <h1 className="text-xl sm:text-4xl font-bold font-roboto uppercase py-6 mb-2">
+          <h1 className="text-2xl text-center sm:text-4xl font-bold font-roboto uppercase sm:py-4 sm:mt-3 pt-6 mt-3">
             <span className="text-[#fa0808]">You May Also</span> Like This
           </h1>
         </motion.div>

@@ -64,11 +64,11 @@ function ClientReviewCard() {
       items: 3,
     },
     tablet: {
-      breakpoint: { max: 1024, min: 464 },
+      breakpoint: { max: 1024, min: 768 },
       items: 2,
     },
     mobile: {
-      breakpoint: { max: 464, min: 0 },
+      breakpoint: { max: 768, min: 0 },
       items: 1,
     },
   };
@@ -98,7 +98,7 @@ function ClientReviewCard() {
         autoPlay={"mobile" ? true : false}
         removeArrowOnDeviceType={["tablet", "mobile"]}
         draggable={true}
-        className="w-full flex justify-around gap-2 items-center"
+        className="w-full flex justify-around gap-4 items-center"
         customLeftArrow={<CustomLeftArrow />}
         customRightArrow={<CustomRightArrow />}
       >

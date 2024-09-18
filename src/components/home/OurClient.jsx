@@ -78,10 +78,6 @@ function OurClient() {
           initial="hidden"
           whileInView="visible"
           ref={scope}
-          // initial={{ x: 0 }}
-          // animate={{ x: "-100%" }}
-          // exit={{ x: 100 }}
-          // transition={{ repeat: Infinity, duration: 12, ease: "linear" }}
           className="flex gap-3 my-3"
           style={{ width: "200%" }}
         >

@@ -17,7 +17,7 @@ function About() {
         <AnimatePresence>
           <motion.div
             variants={{
-              hidden: { opacity: 0, y: -150 },
+              hidden: { opacity: 0, y: -100 },
               visible: {
                 opacity: 1,
                 y: 0,
@@ -59,7 +59,7 @@ function About() {
         <AnimatePresence>
           <motion.div
             variants={{
-              hidden: { opacity: 0, y: -150 },
+              hidden: { opacity: 0, y: -100 },
               visible: {
                 opacity: 1,
                 y: 0,
@@ -116,7 +116,7 @@ function About() {
         <AnimatePresence>
           <motion.div
             variants={{
-              hidden: { opacity: 0, y: -150 },
+              hidden: { opacity: 0, y: -100 },
               visible: {
                 opacity: 1,
                 y: 0,
@@ -162,7 +162,7 @@ function About() {
         <AnimatePresence>
           <motion.div
             variants={{
-              hidden: { opacity: 0, y: -150 },
+              hidden: { opacity: 0, y: -100 },
               visible: {
                 opacity: 1,
                 y: 0,
@@ -204,7 +204,7 @@ function About() {
         <AnimatePresence>
           <motion.div
             variants={{
-              hidden: { opacity: 0, y: -150 },
+              hidden: { opacity: 0, y: -100 },
               visible: {
                 opacity: 1,
                 y: 0,

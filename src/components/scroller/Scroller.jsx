@@ -71,7 +71,7 @@ function Scroller() {
         >
           {pictures.map((item, i) => (
             <img
-              className="w-full h-[110px]"
+              className="object-center w-full h-[160px]"
               key={i}
               src={item.src}
               alt={item.alt}
