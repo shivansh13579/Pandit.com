@@ -10,6 +10,10 @@ import { CiSearch } from "react-icons/ci";
 import { BsCart3 } from "react-icons/bs";
 import { SlMenu } from "react-icons/sl";
 import { SlArrowDown } from "react-icons/sl";
+import { FaFacebook } from "react-icons/fa";
+import { FaSquareInstagram } from "react-icons/fa6";
+import { FaGithub } from "react-icons/fa";
+import { IoLogoLinkedin } from "react-icons/io5";
 
 function MobileMenu() {
   const { cart, item } = useSelector((state) => state.allCarts);
@@ -260,7 +264,7 @@ function MobileMenu() {
             exit="exit"
             className="bg-white w-full left-0 left-0 top-0 z-20 h-screen fixed flex flex-col overflow-scroll"
           >
-            <div className="flex justify-between items-center py-4 px-5 border gap-3">
+            <div className="flex justify-between items-center py-2 px-5 border gap-2">
               <div className="flex-1 w-full">
                 <img
                   className="w-[200px] h-[40px]"
@@ -270,14 +274,14 @@ function MobileMenu() {
               </div>
               <div className="flex-1 flex justify-end w-full ">
                 <img
-                  className="text-end bg-lime-100 px-3 py-3 rounded-full"
+                  className="text-end bg-lime-100 px-2 py-2 rounded-full"
                   onClick={handletoggleMenu}
                   src="../cross.svg"
                   alt="Close"
                 />
               </div>
             </div>
-            <div className="flex flex-col items-start px-5 justify-start text-xl gap-5 mt-4 py-2">
+            <div className="flex flex-col items-start px-5 justify-start text-xl gap-3 py-2">
               <ul className="font-semibold w-full px-3">
                 <li className="pt-7 border-b flex items-center">
                   <NavLink
@@ -374,7 +378,7 @@ function MobileMenu() {
                 </li>
               </ul>
             </div>
-            <div className=" flex items-center px-5 gap-4 justify-start py-5 mt-3">
+            <div className=" flex items-center px-5 gap-4 justify-start py-4 mt-2">
               {!isAuthenticate ? (
                 <>
                   <div className="bg-lime-200 hover:bg-lime-300 text-black flex gap-2 border border-violet-500  px-3 py-1 rounded-md font-semibold ">
@@ -398,6 +402,29 @@ function MobileMenu() {
                   </div>
                 </>
               )}
+            </div>
+            <div className="w-full flex flex-col gap-1 items-center justify-start px-4 py-2 mb-3">
+              <h1 className="text-[14px] text-gray-500 font-semibold text-center">
+                Get Connected with us in Social Media
+              </h1>
+              <div className="flex gap-4 items-center justify-start pt-2">
+                <Link to={"https://www.instagram.com/"}>
+                  <FaFacebook className="text-2xl text-blue-500" />
+                </Link>
+                <Link
+                  to={
+                    "https://www.linkedin.com/feed/?trk=guest_homepage-basic_google-one-tap-submit"
+                  }
+                >
+                  <IoLogoLinkedin className="text-2xl text-blue-800" />
+                </Link>
+                <Link to={"https://www.instagram.com/"}>
+                  <FaSquareInstagram className="text-2xl text-red-500" />
+                </Link>
+                <Link to={"https://github.com/"}>
+                  <FaGithub className="text-2xl" />
+                </Link>
+              </div>
             </div>
           </motion.div>
         )}

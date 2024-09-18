@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Select from "react-select";
 import { color } from "framer-motion";
+import { Link } from "react-router-dom";
 
 function Footer() {
   const [data, setData] = useState([]);
@@ -228,10 +229,30 @@ function Footer() {
                 </div>
               </div>
               <div className="flex gap-6 items-center justify-start pt-4">
-                <img className="png h-[30px] w-[30px]" src="fbook.svg" alt="" />
-                <img className="h-[45px] w-[45px]" src="twitter-x.svg" alt="" />
-                <img className="h-[30px] w-[30px]" src="insta.svg" alt="" />
-                <img className="h-[30px] w-[30px]" src="youtube.svg" alt="" />
+                <Link to={"https://www.instagram.com/"}>
+                  <img
+                    className="png h-[30px] w-[30px]"
+                    src="fbook.svg"
+                    alt=""
+                  />
+                </Link>
+                <Link
+                  to={
+                    "https://www.linkedin.com/feed/?trk=guest_homepage-basic_google-one-tap-submit"
+                  }
+                >
+                  <img
+                    className="h-[45px] w-[45px]"
+                    src="twitter-x.svg"
+                    alt=""
+                  />
+                </Link>
+                <Link to={"https://www.instagram.com/"}>
+                  <img className="h-[30px] w-[30px]" src="insta.svg" alt="" />
+                </Link>
+                <Link to={"https://github.com/"}>
+                  <img className="h-[30px] w-[30px]" src="youtube.svg" alt="" />
+                </Link>
               </div>
             </div>
           </div>

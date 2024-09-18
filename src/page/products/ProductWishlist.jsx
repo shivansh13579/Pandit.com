@@ -6,6 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { addToCart } from "@/features/cartSlice";
+import { toast } from "react-toastify";
 
 function ProductWishlist() {
   const [isHovered, setIsHovered] = useState({});
@@ -18,12 +19,14 @@ function ProductWishlist() {
     event.preventDefault();
     event.stopPropagation(); // Prevents the click event from propagating to the parent
     dispatch(removeToWishList(id));
+    toast.error("Remove To WishList");
   };
 
   const handleCartItem = (event, item) => {
     event.preventDefault();
     event.preventDefault();
     dispatch(addToCart(item));
+    toast.success("Added To Cart");
     navigator("/productCart");
   };
 

@@ -8,6 +8,7 @@ import { addToCart } from "@/features/cartSlice";
 import { addToWishList, removeToWishList } from "@/features/wishListSlice";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { useSelector } from "react-redux";
+import { toast } from "react-toastify";
 
 function ProductCard({ minPrice, maxPrice, gender }) {
   const isAboveScreen = UseMediaQuary("(min-width:1060px)");
@@ -25,6 +26,7 @@ function ProductCard({ minPrice, maxPrice, gender }) {
     event.preventDefault();
     event.stopPropagation();
     dispatch(addToCart(product));
+    toast.success("Added To Cart");
     navigate("/productCart");
   };
 
@@ -32,6 +34,7 @@ function ProductCard({ minPrice, maxPrice, gender }) {
     event.preventDefault();
     event.stopPropagation();
     dispatch(addToWishList(product));
+    toast.success("Added To WishList");
     setIstoogle(true);
     // navigate("/productWishlist");
   };

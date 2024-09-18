@@ -40,8 +40,8 @@ export function SignUp() {
       },
     });
   return (
-    <div className="w-full flex items-center justify-center h-screen bg-white">
-      <div class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+    <div className="w-full flex items-center justify-center h-screen bg-gray-200">
+      <div class="w-full flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <div className="w-full flex items-center justify-center py-4">
           <img
             class=""
@@ -67,7 +67,7 @@ export function SignUp() {
                   value={values.name}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  class="bg-pink-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                   placeholder="Enter Your Name"
                 />
                 {errors.name && touched.name ? (
@@ -82,7 +82,7 @@ export function SignUp() {
                   value={values.email}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  class="bg-pink-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Enter Your Email"
                   required=""
                 />
@@ -99,7 +99,7 @@ export function SignUp() {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="password"
-                  class="bg-pink-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  class=" bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
                   required=""
                 />
                 {errors.password && touched.password ? (
@@ -108,7 +108,7 @@ export function SignUp() {
               </div>
               <button
                 type="submit"
-                class="w-full text-white bg-blue-500 bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                class="w-full text-white bg-violet-600 hover:bg-violet-800 bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center "
               >
                 Create an account
               </button>

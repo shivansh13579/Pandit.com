@@ -41,7 +41,7 @@ function Login() {
     });
 
   return (
-    <div className="w-full flex items-center justify-center h-screen bg-white">
+    <div className="w-full flex items-center justify-center h-screen bg-gray-200">
       <div class="w-full h-full flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
         <div className="w-full flex items-center justify-center py-4">
           <img
@@ -68,7 +68,7 @@ function Login() {
                   value={values.email}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  class="bg-pink-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   placeholder="Enter Your Email"
                   required=""
                 />
@@ -85,7 +85,7 @@ function Login() {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   placeholder="Enter Your password"
-                  class="bg-pink-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                  class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   required=""
                 />
                 {errors.email && touched.email ? (
@@ -95,7 +95,7 @@ function Login() {
               <div class="flex items-center justify-between"></div>
               <button
                 type="submit"
-                class="w-full bg-blue-600 text-white hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-mono text-xl rounded-full px-5 py-2.5 text-center"
+                class="w-full bg-violet-600  text-white hover:bg-violet-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-mono text-xl rounded-xl px-5 py-2.5 text-center"
               >
                 Sign in
               </button>

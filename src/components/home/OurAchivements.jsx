@@ -194,12 +194,12 @@ function OurAchivements() {
   ) : (
     <div className="w-5/6 mx-auto flex flex-col gap-4 py-4">
       <div className="flex flex-col w-full py-6">
-        <div className="flex-1 pr-3">
-          <h1 className="text-[22px] font-roboto font-semibold pb-3 tracking-tighter uppercase">
+        <div className="flex-1 pr-3 flex flex-col justify-center items-center">
+          <h1 className="text-[22px] font-roboto font-semibold pb-3 tracking-tighter uppercase text-center">
             <span className="text-[#fa0808]">Pandit Booking</span> - Book
             Panditji For Puja
           </h1>
-          <p className="text-[16px] font-roboto leading-relaxed">
+          <p className="text-[16px] font-roboto leading-relaxed text-center">
             Panditji Online is the most trusted platform for availing Vedic and
             Hindu Puja Services like performing Vedic Rituals, Religious
             Ceremonies, Vastu Yagya and many more. We provide the best
@@ -243,7 +243,7 @@ function OurAchivements() {
           viewport={{ once: true, amount: 0 }}
           initial="hidden"
           whileInView="visible"
-          className="flex-1"
+          className="flex-1 flex items-center justify-center"
         >
           <img
             src="https://www.panditjeeonline.in/wp-content/uploads/2022/12/h-about-us.png.webp"

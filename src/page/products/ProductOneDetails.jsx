@@ -9,6 +9,7 @@ import { addToCart } from "@/features/cartSlice";
 import { addToWishList } from "@/features/wishListSlice";
 import "react-inner-image-zoom/lib/InnerImageZoom/styles.css";
 import InnerImageZoom from "react-inner-image-zoom";
+import { toast } from "react-toastify";
 
 function ProductOneDetails() {
   const items = useSelector((state) => state.allCarts);
@@ -81,14 +82,6 @@ function ProductOneDetails() {
                     alt="Indicator 1"
                     onClick={() => handleImageClick(0)}
                   />
-                  {/* <img
-                    className={`w-[70px] h-[70px] rounded-xl cursor-pointer ${
-                      activeIndex === 0 ? "border-2 border-black" : ""
-                    }`}
-                    src={product.images.src1}
-                    alt="Indicator 1"
-                    onClick={() => handleImageClick(0)}
-                  /> */}
                   <InnerImageZoom
                     className={`w-[70px] h-[70px] rounded-xl cursor-pointer ${
                       activeIndex === 1 ? "border-2 border-black" : ""
@@ -97,14 +90,7 @@ function ProductOneDetails() {
                     alt="Indicator 2"
                     onClick={() => handleImageClick(1)}
                   />
-                  {/* <img
-                    className={`w-[70px] h-[70px] rounded-xl cursor-pointer ${
-                      activeIndex === 1 ? "border-2 border-black" : ""
-                    }`}
-                    src={product.images.src2}
-                    alt="Indicator 2"
-                    onClick={() => handleImageClick(1)}
-                  /> */}
+
                   <img
                     className={`w-[70px] h-[70px] rounded-xl cursor-pointer ${
                       activeIndex === 2 ? "border-2 border-black" : ""
@@ -144,10 +130,6 @@ function ProductOneDetails() {
                         className="w-full rounded-xl"
                       />
 
-                      {/* <img
-                        src={product.images.src1}
-                        className="w-full rounded-xl"
-                      /> */}
                       <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
                         <button
                           onClick={handlePrevious}
@@ -281,46 +263,22 @@ function ProductOneDetails() {
                       {product.description}
                     </h1>
                   </div>
+
                   <div className="flex items-center justify-start gap-5 px-1 py-2 uppercase h-8 w-full bg-[#c5dcec] rounded-full">
                     <p className="text-[14px] bg-white font-semibold px-3 py-1 rounded-full">
                       1
-                    </p>
-                    <p className="font-bold">Quantity</p>
-                  </div>
-                  <div className="flex items-center justify-start gap-3">
-                    <p onClick={handleDecrease} className="text-6xl font-thin">
-                      -
-                    </p>
-                    <div className="w-fit h-fit">
-                      <input
-                        className="w-[50px] h-[60px] outline-none text-center pt-2 font-semibold bg-bagPattern   bg-no-repeat bg-center"
-                        type="text"
-                        name=""
-                        id=""
-                        readOnly
-                        value={product.quantity}
-                        style={{ backgroundSize: "50px 60px" }}
-                      />
-                    </div>
-
-                    <p onClick={handleIncrease} className="text-4xl font-thin">
-                      +
-                    </p>
-                  </div>
-                  <div className="flex items-center justify-start gap-5 px-1 py-2 uppercase h-8 w-full bg-[#c5dcec] rounded-full">
-                    <p className="text-[14px] bg-white font-semibold px-3 py-1 rounded-full">
-                      2
                     </p>
                     <p className="font-bold">PROCEED NOW</p>
                   </div>
 
                   {/* Add to Cart */}
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-4 py-3">
                     <div>
                       <button
                         disabled={loading ? true : false}
                         onClick={() => {
                           dispatch(addToCart(product));
+                          toast.success("Added To Cart");
                           navigate("/productCart");
                         }}
                         style={{
@@ -343,6 +301,7 @@ function ProductOneDetails() {
                       <button
                         onClick={() => {
                           dispatch(addToWishList(product));
+                          toast.success("Added To WishList");
                           navigate("/productWishlist");
                         }}
                         className="w-full mt-2 text-[16px] font-semibold py-2 px-4 rounded-full uppercase border border-gray-300 hover:border-black bg-slate-300 hover:bg-slate-400"
@@ -352,7 +311,7 @@ function ProductOneDetails() {
                     </div>
                   </div>
 
-                  <div className="flex gap-8 items-center">
+                  <div className="flex gap-8 items-center py-4">
                     <div className="flex flex-col gap-4">
                       <h1 className="text-xl">Delivery & Services</h1>
                       <ul className="felx flex-col gap-3 items-center">
@@ -435,7 +394,7 @@ function ProductOneDetails() {
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 ">
                     <h1 className="font-semibold text-xl">Category:</h1>
 
                     <Link to={"/products"}>
@@ -445,7 +404,7 @@ function ProductOneDetails() {
                     </Link>
                   </div>
 
-                  <div className="flex items-center gap-2 justify-between">
+                  <div className="flex items-center gap-2 justify-between pt-2">
                     <div className="flex gap-2 items-center font-semibold">
                       <img src="../safeCheckout.svg" alt="" />
                       <p>Safe Checkout</p>
@@ -629,33 +588,6 @@ function ProductOneDetails() {
                   </div>
                 </div>
 
-                <div className="flex items-center justify-start gap-5 px-1 py-2 uppercase h-8 w-full bg-[#c5dcec] rounded-full">
-                  <p className="text-[14px] bg-white font-semibold px-3 py-1 rounded-full">
-                    1
-                  </p>
-                  <p className="font-bold">Quantity</p>
-                </div>
-                <div className="w-full flex items-center justify-start gap-3 ">
-                  <p onClick={handleDecrease} className="text-6xl font-thin">
-                    -
-                  </p>
-                  <div className="">
-                    <input
-                      className="w-[50px] h-[60px] outline-none text-center pt-2 font-semibold bg-bagPattern   bg-no-repeat bg-center"
-                      type="text"
-                      name=""
-                      id=""
-                      readOnly
-                      value={product.quantity}
-                      style={{ backgroundSize: "50px 60px" }}
-                    />
-                  </div>
-
-                  <p onClick={handleIncrease} className="text-4xl font-thin">
-                    +
-                  </p>
-                </div>
-
                 {/* Add to Cart */}
                 <div className="flex flex-col gap-4">
                   <div className="w-full">
@@ -663,6 +595,7 @@ function ProductOneDetails() {
                       disabled={loading}
                       onClick={() => {
                         dispatch(addToCart(product));
+                        toast.success("Added To Cart");
                         navigate("/productCart");
                       }}
                       style={{
@@ -685,6 +618,7 @@ function ProductOneDetails() {
                     <button
                       onClick={() => {
                         dispatch(addToWishList(product));
+                        toast.success("Added To WishList");
                         navigate("/productWishlist");
                       }}
                       className="w-full  text-xl font-semibold py-2 px-4 rounded-full uppercase border border-gray-300 hover:border-black"
