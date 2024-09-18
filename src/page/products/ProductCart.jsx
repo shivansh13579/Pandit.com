@@ -11,6 +11,7 @@ import {
   increaseQuantity,
   decreaseQuantity,
 } from "@/features/cartSlice";
+import { toast } from "react-toastify";
 
 function ProductCart() {
   const { cart, totalQuantity, totalPrice } = useSelector(
@@ -73,7 +74,10 @@ function ProductCart() {
                       <div className="flex flex-col gap-2 justify-start items-start">
                         <h1>{product.heading}</h1>
                         <button
-                          onClick={() => dispatch(removeItem(product.id))}
+                          onClick={() => {
+                            dispatch(removeItem(product.id));
+                            toast.success("Removed From Cart");
+                          }}
                           className="border-b-black border-b"
                         >
                           Remove

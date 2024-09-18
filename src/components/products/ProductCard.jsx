@@ -43,6 +43,7 @@ function ProductCard({ minPrice, maxPrice, gender }) {
     event.preventDefault();
     event.stopPropagation();
     dispatch(removeToWishList(id));
+    toast.error("Remove To WishList");
     setIstoogle(false);
   };
 
