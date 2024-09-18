@@ -290,8 +290,13 @@ function LuckyBraclet() {
         </div>
       ) : (
         <div className="w-full my-3">
-          <div className="fixed top-42 left-0 z-10 border bg-white py-2 pl-1 pr-2 rounded-r-2xl">
-            <img onClick={handleToggle} src="../strow.svg" alt="" />
+          <div className="fixed top-42 left-0 z-10 border bg-white py-3 pl-2 pr-2 rounded-r-2xl">
+            <img
+              className="w-[25px]"
+              onClick={handleToggle}
+              src="../strow.svg"
+              alt=""
+            />
           </div>
           <div>
             <ProductCard
@@ -306,9 +311,14 @@ function LuckyBraclet() {
       {/* Mobile Popup */}
       {!isAboveScreen && isToogle && (
         <div className="w-5/6 h-full z-30">
-          <div className="w-[94%] h-5 fixed top-0 left-0 right-0 flex items-center justify-evenly py-3 px-2 bg-gray-100 z-30 ">
-            <p className="text-[14px]">SIDEBAR PRODUCT</p>
-            <img onClick={handleToggle} src="../cross.svg" alt="" />
+          <div className="w-[94%] h-10 fixed top-0 left-0 right-0 flex items-center justify-between py-3 px-4 bg-gray-100 z-30 ">
+            <p className="text-[18px]">SIDEBAR PRODUCT</p>
+            <img
+              className="text-xl"
+              onClick={handleToggle}
+              src="../cross.svg"
+              alt=""
+            />
           </div>
 
           <div className="w-[94%] h-screen bg-white left-0 right-0 top-8 z-30 fixed flex flex-col overflow-auto pl-2 ">
@@ -327,8 +337,18 @@ function LuckyBraclet() {
               </div>
               <div className="w-full">
                 {!isRotate ? (
-                  <div className="">
-                    <Box sx={{ width: 200 }} className="px-2 ">
+                  <div className="w-full border">
+                    <Box
+                      sx={{
+                        width: {
+                          xs: "100%", // full width on extra small screens (mobile)
+                          sm: "100%", // 300px on small screens (tablets)
+                          md: "100%", // 400px on medium screens (laptops)
+                          lg: "100%", // 500px on large screens (desktops)
+                        },
+                      }}
+                      className="px-2"
+                    >
                       <Slider
                         value={value}
                         onChange={handleChange}

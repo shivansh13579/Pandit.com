@@ -5,6 +5,7 @@ import authService from "@/appwrite/auth";
 import { useDispatch } from "react-redux";
 import { loginSchema } from "@/validatinSchema/LoginSchema";
 import { login } from "@/features/authSlice";
+import { toast } from "react-toastify";
 
 function Login() {
   const navigat = useNavigate();
@@ -28,11 +29,12 @@ function Login() {
           if (userData) {
             const userData = await authService.getCurrentUser();
             if (userData) dispatch(login(userData));
+            toast.success("Login Successfully");
             navigat("/");
           }
           setLoading(false);
         } catch (error) {
-          console.log(error.message);
+          toast.error(error.message);
           setLoading(false);
         }
       },

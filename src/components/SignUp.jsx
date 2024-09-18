@@ -5,6 +5,7 @@ import authService from "@/appwrite/auth";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "@/features/authSlice";
+import { toast } from "react-toastify";
 
 export function SignUp() {
   const dispatch = useDispatch();
@@ -28,11 +29,12 @@ export function SignUp() {
           if (userData) {
             const userData = await authService.getCurrentUser();
             if (userData) dispatch(login(userData));
+            toast.success("Registration SuccessFully");
             navigate("/");
             setLoading(false);
           }
         } catch (error) {
-          console.log(error);
+          toast.error(error.message);
           setLoading(false);
         }
       },
