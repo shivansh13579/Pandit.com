@@ -337,7 +337,7 @@ function LuckyBraclet() {
               </div>
               <div className="w-full">
                 {!isRotate ? (
-                  <div className="w-full border">
+                  <div className="w-full">
                     <Box
                       sx={{
                         width: {

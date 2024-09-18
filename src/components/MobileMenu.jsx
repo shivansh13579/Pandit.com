@@ -215,9 +215,9 @@ function MobileMenu() {
                     <Link to={"/signup"}>
                       <BsCart3 className="text-3xl" />
                     </Link>
-                    {/* <span className="absolute -right-3 bottom-4 text-[12px] px-[5px] bg-yellow-500 rounded-full ">
+                    <span className="absolute -right-3 bottom-4 text-[12px] px-[5px] bg-yellow-500 rounded-full ">
                       {cart.length}
-                    </span> */}
+                    </span>
                   </div>
                 </>
               ) : (
