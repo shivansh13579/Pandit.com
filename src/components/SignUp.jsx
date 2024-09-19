@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "@/features/authSlice";
 import { toast } from "react-toastify";
+import { setCartItem } from "@/features/cartSlice";
 
 export function SignUp() {
   const dispatch = useDispatch();
@@ -29,6 +30,9 @@ export function SignUp() {
           if (userData) {
             const userData = await authService.getCurrentUser();
             if (userData) dispatch(login(userData));
+
+            localStorage.removeItem("cart"); // Clear cart from localStorage
+            dispatch(setCartItem([]));
             toast.success("Registration SuccessFully");
             navigate("/");
             setLoading(false);
