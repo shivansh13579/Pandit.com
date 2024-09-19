@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import MobileMenu from "./MobileMenu";
 import Headroom from "react-headroom";

@@ -22,27 +22,6 @@ function ProductOneDetails() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [product, setProduct] = useState(null);
 
-  const [number, setNumber] = useState(() => {
-    return parseInt(localStorage.getItem("product-quantity")) || 1;
-  });
-
-  const handleDecrease = () => {
-    if (number > 0)
-      setNumber((prev) => {
-        const newNumber = prev - 1;
-        localStorage.setItem("product-quantity", newNumber);
-        return newNumber;
-      });
-  };
-
-  const handleIncrease = () => {
-    setNumber((prev) => {
-      const newNumber = prev + 1;
-      localStorage.setItem("product-quantity", newNumber);
-      return newNumber;
-    });
-  };
-
   const handleImageClick = (index) => {
     setActiveIndex(index);
   };
