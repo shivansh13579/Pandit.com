@@ -4,14 +4,22 @@ const searchSlice = createSlice({
   name: "search",
   initialState: {
     query: "",
+    results: [],
+    status: "idle",
   },
   reducers: {
     setSearchQuery: (state, action) => {
       state.query = action.payload;
     },
+    setResults: (state, action) => {
+      state.results = action.payload;
+    },
+    setStatus: (state, action) => {
+      state.status = action.payload;
+    },
   },
 });
 
-export const { setSearchQuery } = searchSlice.actions;
+export const { setSearchQuery, setResults, setStatus } = searchSlice.actions;
 
 export default searchSlice.reducer;
