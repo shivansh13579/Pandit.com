@@ -67,7 +67,7 @@ function Menu({
           exit="exit"
           className="bg-white w-full left-0 left-0 top-0 z-20 h-screen fixed flex flex-col overflow-scroll"
         >
-          <div className="flex justify-between items-center py-2 px-5 border gap-2">
+          <div className="flex justify-between items-center py-4 px-5 border gap-2">
             <div className="flex-1 w-full">
               <img
                 className="w-[200px] h-[40px]"
@@ -77,7 +77,7 @@ function Menu({
             </div>
             <div className="flex-1 flex justify-end w-full ">
               <img
-                className="text-end bg-lime-100 px-2 py-2 rounded-full"
+                className="text-end bg-lime-200 px-3 py-3 rounded-full"
                 onClick={handletoggleMenu}
                 src="../cross.svg"
                 alt="Close"

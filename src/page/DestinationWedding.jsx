@@ -21,8 +21,8 @@ function DestinationWedding() {
             <ul>
               <li>
                 <Link
+                  to={"/"}
                   className="hover:text-red-600  hover:no-underline"
-                  //   onClick={navigate("/")}
                 >
                   Home
                 </Link>

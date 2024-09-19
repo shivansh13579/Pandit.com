@@ -118,7 +118,7 @@ function OurProducts() {
             whileInView="visible"
             className="flex items-center justify-center gap-1  border !border-[#fa0808] text-[#fa0808] uppercase font-bold hover:text-white hover:bg-[#fa0808]   px-4 py-2 rounded-full"
           >
-            <span>View All Blogs</span>
+            <span>View All Products</span>
             <span>
               <FaLongArrowAltRight className="hover:text-white" />
             </span>
@@ -179,7 +179,7 @@ function OurProducts() {
       </div>
       <Link className=" flex items-center justify-center" to={`/lucky-braclet`}>
         <button className="flex items-center justify-center gap-1  border !border-[#fa0808] text-[#fa0808] uppercase font-bold hover:text-white hover:bg-[#fa0808]   px-4 py-2 rounded-full">
-          <span>View All Blogs</span>
+          <span>View All Products</span>
           <span>
             <FaLongArrowAltRight className="hover:text-white" />
           </span>

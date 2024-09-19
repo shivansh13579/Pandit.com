@@ -16,17 +16,17 @@ const AuthButtons = () => {
   };
 
   return (
-    <div className=" flex items-center px-5 gap-4 justify-start py-4 mt-2">
+    <div className=" flex items-center px-5 gap-4 justify-start py-4 mt-4">
       {!isAuthenticate ? (
         <>
-          <div className="bg-lime-200 hover:bg-lime-300 text-black flex gap-2 border border-violet-500  px-3 py-1 rounded-md font-semibold ">
+          <div className="bg-lime-300 hover:bg-lime-200 text-black flex gap-2 border border-violet-500  px-4 py-2 rounded-md font-semibold ">
             <Link to={"/login"} className="flex gap-6">
-              <p>LogIn</p>
+              <p className="text-xl">LogIn</p>
             </Link>
           </div>
-          <div className="bg-lime-200 hover:bg-lime-300 text-black flex gap-2 border border-violet-500 px-3 py-1 rounded-md font-semibold ">
+          <div className="bg-lime-300 hover:bg-lime-200 text-black flex gap-2 border border-violet-500 px-4 py-2 rounded-md font-semibold ">
             <Link to={"/signup"} className="flex gap-4">
-              <p>SignUp</p>
+              <p className="text-xl">SignUp</p>
             </Link>
           </div>
         </>
@@ -34,9 +34,9 @@ const AuthButtons = () => {
         <>
           <div
             onClick={handleLogOut}
-            className="bg-lime-200 hover:bg-lime-300 text-black flex gap-2 border border-violet-500 hover:bg-violet-300 px-3 py-1 rounded-md font-semibold text-white"
+            className="bg-lime-300 hover:bg-lime-200 text-black flex gap-2 border border-violet-500 hover:bg-violet-300 px-4 py-2 rounded-md font-semibold"
           >
-            <p>LogOut</p>
+            <p className="text-xl">LogOut</p>
           </div>
         </>
       )}

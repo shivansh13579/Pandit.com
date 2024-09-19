@@ -32,10 +32,7 @@ function Services() {
           <h1 className="text-5xl">Services</h1>
           <ul>
             <li>
-              <Link
-                className="hover:text-red-600  hover:no-underline"
-                //   onClick={navigate("/")}
-              >
+              <Link to={"/"} className="hover:text-red-600  hover:no-underline">
                 Home
               </Link>
             </li>
