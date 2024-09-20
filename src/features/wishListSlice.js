@@ -16,7 +16,6 @@ export const wishListSlice = createSlice({
       );
       if (find === -1) {
         state.wishList.push({ ...action.payload, quantity: 1 });
-        localStorage.setItem("wishList", JSON.stringify(state.wishList));
       }
     },
 

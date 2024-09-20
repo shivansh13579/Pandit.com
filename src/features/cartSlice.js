@@ -19,7 +19,7 @@ export const cartSlice = createSlice({
       } else {
         state.cart.push({ ...action.payload, quantity: 1 });
       }
-      localStorage.setItem("cart", JSON.stringify(state.cart));
+      // localStorage.setItem("cart", JSON.stringify(state.cart));
     },
 
     setCartItem: (state, action) => {

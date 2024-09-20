@@ -9,8 +9,18 @@ import { SlMenu } from "react-icons/sl";
 import { persistor } from "@/app/store";
 import Menu from "./home/header/Menu";
 import Search from "./home/header/Search";
+import { toast } from "react-toastify";
+import { BeatLoader } from "react-spinners";
+
+const override = {
+  display: "block",
+  margin: "0 auto",
+  borderColor: "gray",
+};
 
 function MobileMenu() {
+  const [color, setColor] = useState("#ffffff");
+  const [loading, setLoading] = useState(false);
   const { cart, item } = useSelector((state) => state.allCarts);
   const [isMenuToggle, setMenuToggle] = useState(false);
 
@@ -31,10 +41,19 @@ function MobileMenu() {
   const dispatch = useDispatch();
 
   const handleLogOut = () => {
-    authService.logout().then(() => {
-      dispatch(logout());
-      persistor.purge();
-    });
+    setLoading(true);
+    setTimeout(async () => {
+      try {
+        await authService.logout(); // Perform logout
+        dispatch(logout()); // Dispatch Redux action
+        toast.success("LogOut Successfully");
+        await persistor.purge(); // Clear persisted state
+      } catch (error) {
+        toast.error("Error logging out");
+      } finally {
+        setLoading(false); // Stop the loader after the process completes
+      }
+    }, 1000);
   };
 
   useEffect(() => {
@@ -96,13 +115,29 @@ function MobileMenu() {
                 </>
               ) : (
                 <>
-                  <div
+                  <button
+                    disabled={loading}
                     onClick={handleLogOut}
-                    className="flex gap-2 border border-violet-500 hover:bg-violet-300 px-3 py-1 rounded-md font-semibold "
+                    value={color}
+                    onChange={(input) => setColor(input.target.value)}
+                    type="submit"
+                    class="flex gap-2 border border-violet-500 hover:bg-violet-500 px-3 py-1 rounded-md font-semibold "
                   >
-                    <img src="../login.svg" alt="" />
-                    <p>LogOut</p>
-                  </div>
+                    {loading ? (
+                      <>
+                        <BeatLoader
+                          color={color}
+                          loading={loading}
+                          cssOverride={override}
+                          size={8}
+                          aria-label="Loading Spinner"
+                          data-testid="loader"
+                        />
+                      </>
+                    ) : (
+                      "LogOut"
+                    )}
+                  </button>
                   <div className="flex gap-2 border border-pink-500 hover:bg-pink-300 px-3 py-1 rounded-md font-semibold">
                     <Link to={"/productWishlist"} className="flex gap-2">
                       <img src="../heart.svg" alt="" />

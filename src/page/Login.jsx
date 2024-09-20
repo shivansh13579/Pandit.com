@@ -6,8 +6,16 @@ import { useDispatch } from "react-redux";
 import { loginSchema } from "@/validatinSchema/LoginSchema";
 import { login } from "@/features/authSlice";
 import { toast } from "react-toastify";
+import { BeatLoader } from "react-spinners";
+
+const override = {
+  display: "block",
+  margin: "0 auto",
+  borderColor: "red",
+};
 
 function Login() {
+  const [color, setColor] = useState("#ffffff");
   const navigat = useNavigate();
   const dispatch = useDispatch();
   const [loading, setLoading] = useState(false);
@@ -24,7 +32,6 @@ function Login() {
         setLoading(true);
         try {
           const userData = await authService.login(values);
-          console.log("user", userData);
 
           if (userData) {
             const userData = await authService.getCurrentUser();
@@ -94,13 +101,29 @@ function Login() {
               </div>
               <div class="flex items-center justify-between"></div>
               <button
+                disabled={loading}
+                value={color}
+                onChange={(input) => setColor(input.target.value)}
                 type="submit"
                 class="w-full bg-violet-600  text-white hover:bg-violet-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-mono text-xl rounded-xl px-5 py-2.5 text-center"
               >
-                Sign in
+                {loading ? (
+                  <>
+                    <BeatLoader
+                      color={color}
+                      loading={loading}
+                      cssOverride={override}
+                      size={12}
+                      aria-label="Loading Spinner"
+                      data-testid="loader"
+                    />
+                  </>
+                ) : (
+                  "Sign in"
+                )}
               </button>
               <p class="text-sm font-light text-gray-500 dark:text-gray-400 text-center">
-                Don’t have an account yet?{" "}
+                Don’t have an account yet?
                 <a
                   href="/signup"
                   class="font-medium text-primary-600 hover:underline dark:text-primary-500"

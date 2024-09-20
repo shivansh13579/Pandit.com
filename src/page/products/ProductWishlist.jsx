@@ -13,13 +13,12 @@ function ProductWishlist() {
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const { wishList } = useSelector((state) => state.wishLists);
-  console.log("wihslist", wishList, wishList.length);
 
   const handleRemove = (event, id) => {
     event.preventDefault();
     event.stopPropagation(); // Prevents the click event from propagating to the parent
     dispatch(removeToWishList(id));
-    toast.error("Remove To WishList");
+    toast.success("Remove To WishList");
   };
 
   const handleCartItem = (event, item) => {
@@ -29,13 +28,6 @@ function ProductWishlist() {
     toast.success("Added To Cart");
     navigator("/productCart");
   };
-
-  useEffect(() => {
-    const saveWishList = localStorage.getItem("wishList");
-    if (saveWishList) {
-      dispatch(setWishList(JSON.parse(saveWishList)));
-    }
-  }, [dispatch]);
 
   const handleIsHoveredStart = (id) => {
     setIsHovered((prevData) => ({ ...prevData, [id]: true }));
